@@ -1,0 +1,62 @@
+<div class="mx-auto max-w-[var(--container)] px-4 py-8 sm:px-6 sm:py-12 lg:py-16">
+	<section
+		class="grid items-center gap-8 lg:grid-cols-[1fr_1.05fr] lg:gap-16"
+		aria-labelledby="landing-title"
+	>
+		<div class="min-w-0 py-4 lg:py-10">
+			<p class="mb-5 flex items-center gap-3 text-sm font-medium text-[var(--c-text)]">
+				<span class="h-px w-8 bg-[var(--c-text-strong)]" aria-hidden="true"></span>
+				<span translate>Digital solutions for your business</span>
+			</p>
+			<h1
+				id="landing-title"
+				class="max-w-[12ch] text-5xl font-semibold leading-[1.08] tracking-[-0.04em] text-[var(--c-text-strong)] sm:text-6xl lg:text-7xl"
+			>
+				{{ company.name }}
+			</h1>
+			<p class="mt-6 max-w-xl text-base leading-8 text-[var(--c-text)] sm:text-lg">
+				{{ companyDescription() }}
+			</p>
+			<a
+				class="theme-focus mt-8 inline-flex min-h-12 items-center gap-5 rounded-[var(--radius-btn)] bg-[var(--c-primary)] px-6 py-3 text-sm font-semibold text-[var(--c-on-primary)] transition-colors hover:bg-[var(--c-primary-hover)]"
+				routerLink="/"
+				fragment="company-profile"
+				queryParamsHandling="preserve"
+			>
+				<span translate>About company</span><span aria-hidden="true">↗</span>
+			</a>
+		</div>
+		<figure class="min-w-0 overflow-hidden rounded-[var(--radius-card)] bg-[var(--c-bg-secondary)]">
+			<img
+				class="aspect-[4/3] w-full object-cover lg:aspect-square"
+				ngSrc="/images/business-studio.webp"
+				width="1536"
+				height="1024"
+				sizes="(min-width: 1024px) 50vw, 100vw"
+				alt="Illustrative sunlit studio with a shared oak worktable"
+				priority
+			/>
+			<figcaption
+				class="flex items-center justify-between gap-4 border-x border-b border-[var(--c-border)] px-5 py-4 text-xs text-[var(--c-text)]"
+			>
+				<span>{{ company.name }}</span
+				><span translate>Illustrative image</span>
+			</figcaption>
+		</figure>
+	</section>
+	<section
+		id="company-profile"
+		class="mt-12 grid scroll-mt-8 gap-6 border-t border-[var(--c-border)] py-8 sm:mt-16 sm:grid-cols-[1fr_2fr]"
+		aria-labelledby="company-title"
+	>
+		<h2 id="company-title" class="text-sm font-semibold text-[var(--c-text-strong)]" translate>
+			Company profile
+		</h2>
+		<div class="max-w-2xl">
+			<p class="text-2xl font-semibold tracking-tight text-[var(--c-text-strong)]">
+				{{ company.name }}
+			</p>
+			<p class="mt-3 text-base leading-8 text-[var(--c-text)]">{{ companyDescription() }}</p>
+		</div>
+	</section>
+</div>
